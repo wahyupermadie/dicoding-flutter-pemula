@@ -1,6 +1,7 @@
 import 'package:dicoding_final_project1/screen/login/login_screen.dart';
 import 'package:dicoding_final_project1/screen/register/register_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import './utils/colors.dart';
 
 void main() {
@@ -38,8 +39,8 @@ class AuthPage extends StatelessWidget {
                 Container(
                   width: screenSize.width / 2,
                   height: screenSize.width / 2,
-                  decoration: BoxDecoration(
-                      color: Colors.orange, shape: BoxShape.circle),
+                  decoration: BoxDecoration(shape: BoxShape.circle),
+                  child: SvgPicture.asset('assets/ic_doctor.svg'),
                 ),
               ],
             ),
@@ -54,9 +55,7 @@ class AuthPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                      new RegisterApp()),
+                  MaterialPageRoute(builder: (context) => new RegisterApp()),
                 );
               },
               child: Text("Register"),
@@ -73,9 +72,7 @@ class AuthPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          new LoginApp()),
+                  MaterialPageRoute(builder: (context) => new LoginApp()),
                 );
               },
               child: Text("Login"),
