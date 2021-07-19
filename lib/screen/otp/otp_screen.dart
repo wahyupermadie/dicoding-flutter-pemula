@@ -51,7 +51,7 @@ class _LoginScreenState extends State<OtpScreen> {
                   height: 8,
                 ),
                 Text(
-                  "Masukan kode verifikasi yang telah dikirimkan ke nomor 082123123123",
+                  "Masukan kode verifikasi yang telah dikirimkan ke nomor yang kamu masukan sebelumnya",
                   style: TextStyle(
                     color: ProjectColors.secondaryTextColor,
                   ),

@@ -1,3 +1,4 @@
+import 'package:dicoding_final_project1/screen/home/home_creen.dart';
 import 'package:dicoding_final_project1/screen/login/login_screen.dart';
 import 'package:dicoding_final_project1/screen/register/register_screen.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +45,13 @@ class AuthPage extends StatelessWidget {
                   child: SvgPicture.asset('assets/ic_doctor.svg'),
                 ),
               ],
+            ),
+            Text(
+              "AyouSin - Ayouk Vaksin",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: Colors.black87),
             ),
             SizedBox(
               height: 42,
@@ -112,7 +120,15 @@ class AuthPage extends StatelessWidget {
                 primary: ProjectColors.facebookColor,
                 minimumSize: Size((screenSize.width / 1.3).toDouble(), 44.0),
               ),
-              onPressed: () {},
+              onPressed: () {
+                final snackBar = SnackBar(
+                  content: Text('Yay! kamu login dengan Facebook!'),
+                );
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                Navigator.pushReplacement(context, (
+                  MaterialPageRoute(builder: (builder) => HomeScreen())
+                ));
+              },
             ),
             SizedBox(
               height: 24,
