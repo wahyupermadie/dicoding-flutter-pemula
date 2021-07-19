@@ -2,6 +2,7 @@ import 'package:dicoding_final_project1/screen/login/login_screen.dart';
 import 'package:dicoding_final_project1/screen/register/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import './utils/colors.dart';
 
 void main() {
@@ -55,7 +56,7 @@ class AuthPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => new RegisterApp()),
+                  MaterialPageRoute(builder: (context) => new RegisterScreen()),
                 );
               },
               child: Text("Register"),
@@ -72,7 +73,7 @@ class AuthPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => new LoginApp()),
+                  MaterialPageRoute(builder: (context) => new LoginScreen()),
                 );
               },
               child: Text("Login"),

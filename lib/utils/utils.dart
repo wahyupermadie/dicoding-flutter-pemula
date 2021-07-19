@@ -1,2 +1,2 @@
-export 'string_ext.dart';
 export 'colors.dart';
+export 'string_ext.dart';

@@ -1,18 +1,18 @@
 import 'dart:async';
+
+import 'package:dicoding_final_project1/screen/otp/otp_screen.dart';
 import 'package:dicoding_final_project1/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() => runApp(LoginApp());
-
-class LoginApp extends StatefulWidget {
-  const LoginApp();
+class LoginScreen extends StatefulWidget {
+  const LoginScreen();
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginApp> {
+class _LoginScreenState extends State<LoginScreen> {
   final myController = TextEditingController();
   Timer? _debounce;
   bool? _isPhoneNumberValid;
@@ -103,7 +103,11 @@ class _LoginScreenState extends State<LoginApp> {
                       primary: ProjectColors.orangePrimary,
                       minimumSize: Size(screenSize.width, 44.0),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => new OtpScreen())
+                      );
+                    },
                     child: Text("Login"),
                   )
                  else

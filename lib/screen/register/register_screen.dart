@@ -1,18 +1,18 @@
 import 'dart:async';
+
+import 'package:dicoding_final_project1/screen/otp/otp_screen.dart';
+import 'package:dicoding_final_project1/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dicoding_final_project1/utils/utils.dart';
 
-void main() => runApp(RegisterApp());
-
-class RegisterApp extends StatefulWidget {
-  const RegisterApp();
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen();
 
   @override
   _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterApp> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final phoneNumberController = TextEditingController();
   final nameController = TextEditingController();
   final emailController = TextEditingController();
@@ -94,9 +94,7 @@ class _RegisterScreenState extends State<RegisterApp> {
     Size screenSize = MediaQuery.of(context).size;
     return MaterialApp(
       home: GestureDetector(
-        onTap: () => {
-          FocusManager.instance.primaryFocus?.unfocus()
-        },
+        onTap: () => {FocusManager.instance.primaryFocus?.unfocus()},
         child: Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: Colors.white,
@@ -123,8 +121,7 @@ class _RegisterScreenState extends State<RegisterApp> {
                 children: [
                   SingleChildScrollView(
                     child: Container(
-                      height:
-                          screenSize.height,
+                      height: screenSize.height,
                       child: Form(
                         key: _formKey,
                         child: Column(
@@ -173,7 +170,8 @@ class _RegisterScreenState extends State<RegisterApp> {
                               controller: phoneNumberController,
                               keyboardType: TextInputType.number,
                               inputFormatters: [
-                                FilteringTextInputFormatter.allow(RegExp("[0-9]"))
+                                FilteringTextInputFormatter.allow(
+                                    RegExp("[0-9]"))
                               ],
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(),
@@ -216,7 +214,13 @@ class _RegisterScreenState extends State<RegisterApp> {
                               primary: ProjectColors.orangePrimary,
                               minimumSize: Size(screenSize.width, 44.0),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => new OtpScreen(),
+                                  ));
+                            },
                             child: Text("Login"),
                           )
                         else
